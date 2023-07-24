@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Achievements
+{% endblock %}
+
+{% block main %}
+
+<div class="card">
+    <div class="card-body">
+
+    <h6 class="card-header mb-4">Your current streak is {{ delta }} {% if delta == 1 %}day{% else %}days.{% endif %}</h6>
+
+
+    <canvas id="chart"></canvas>
+
+            <script>
+                var ctx = document.getElementById("chart").getContext("2d");
+
+               const data = {
+                  datasets: [{
+                    label: 'Streak',
+                    data: [
+                    {% for row in rows: %}
+
+                    {x: moment.utc("{{ row["timestamp"] }}"), y: {{ row["streak"] }} },
+
+                    {% endfor %}
+
+
+  //{x: moment.utc("2017-07-08T06:15:02"),y: 23.375},
+  //{x: moment.utc("2017-07-09T06:15:02"),y: 23.312},
+ // {x: moment.utc("2017-07-10T06:15:02"),y: 23.312},
+ // {x: moment.utc("2017-07-11T06:15:02"),y: 23.25}
+                    ],
+                    backgroundColor: 'rgb(66, 153, 83)',
+                    borderColor: 'rgb(66, 153, 83)',
+                    tension: 0.1,
+                    fill: true,
+                  }],
+                };
+
+                var scatterChart = new Chart(ctx,{
+                    type: 'line',
+                    data: data,
+                    options: {
+
+                        //https://stackoverflow.com/questions/53669361/how-to-display-date-as-label-on-x-axis-in-chart-js
+                        scales: {
+                            y: {
+                                ticks: {
+                                    beginAtZero:true
+                                }
+                            },
+                            x: {
+                                type: 'time',
+                                time: {
+                                    parser: 'YYYY-MM-DD HH:mm:ss',
+                                    unit: 'minute',
+                                    displayFormats: {
+                                        'minute': 'DD/MM',
+                                        'hour': 'DD/MM'
+                                    }
+                                },
+                                ticks: {
+                                    source: 'data'
+                                }
+                            }
+                        }
+
+                    }
+                });
+
+            </script>
+
+    </div>
+</div>
+
+{% endblock %}

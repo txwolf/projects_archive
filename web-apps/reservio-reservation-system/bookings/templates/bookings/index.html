@@ -1,0 +1,20 @@
+{% extends "bookings/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<div class="jumbotron">
+    <h1 class="display-5">Schedule your visit.</h1>
+    <p class="lead">This is scheduling application for your next beauty treatment. Book, browse available dates and
+        possibly cancel your visit.</p>
+    <hr class="my-4">
+
+    <div class='d-flex flex-column justify-content-between align-items-center mt-5'>
+        <a class="btn btn-primary btn-lg col-md-4 col-5 mb-3" href="{% url 'book' %}" role="button">Book
+            Appointment</a>
+        <a class="btn btn-primary btn-lg col-md-4 col-5" href="{% url 'cancel' %}" role="button">Cancel your
+            booking</a>
+    </div>
+
+
+    {% endblock %}

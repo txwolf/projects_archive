@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@400;700&display=swap');
+
+body {
+  min-height: 100vh;
+  background-color: #810000;
+  margin: 2rem;
+}
+
+div {
+  font-family: 'Cormorant', serif;
+}
+
+.header {
+  font-size: 80px;
+  color: #DF8B36;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-color: #810000;
+}
+
+.intro {
+  text-align: center;
+}
+
+.intro__instruction {
+  font-size: 36px;
+  color: #F8F4E3;
+  max-width: 800px;
+  margin: 24px auto 0;
+}
+
+.intro__quote {
+  max-width: 680px;
+  margin-top: 2rem;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: #F8F4E3;
+  margin: 24px auto 0;
+}
+
+.intro__browsers {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.logger {
+  margin: 0 auto;
+  max-width: 800px;
+  margin-top: 30px;
+  background: #F8F4E3;
+  padding: 16px;
+  box-shadow: 0 0 8px #F8F4E3;
+  overflow-y: scroll;
+}
+
+.logger__row {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logger__icon {
+  margin-right: 10px;
+}
+
+.logger__link {
+  color: #000000;
+}
+
+.logger__link:hover {
+  color: #DF8B36;
+}
+
+a {
+  color: unset;
+  text-decoration: unset;
+}

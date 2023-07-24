@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+{% if session.user_id %}
+Homepage
+{% else %}
+Welcome
+{% endif %}
+
+{% endblock %}
+
+{% block main %}
+
+
+<div class="card">
+  <div class="card-body">
+
+    <div class="quote mb">
+      <p><i>The modern struggle:</i></p>
+      <p><i>Lone individuals summoning inhuman willpower, fasting, meditating, and exercising,up against armies of
+          scientists & statisticians weaponizing abundant food, screens, & medicine into junk food, clickbait news,
+          infinite porn, endless games & addictive drugs.</i></p>
+      <footer class="blockquote-footer">Nav.al (@naval)</footer>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h6 class="card-header">
+    Fight Club is a place where you confront your weaknesses. You log the attacks, proud of every fight, and grow the
+    streak of wins.
+  </h6>
+  <div class="card-body">
+
+    <p>Rules of Fight Club:</p>
+    <p><strong>1st rule: </strong>You do not talk about Fight Club.</p>
+    <p><strong>2nd rule: </strong>You do not talk about Fight Club.</p>
+    <p><strong>3rd rule: </strong>You are proud of every added fight.</p>
+    <p><strong>5th rule: </strong>You are even more proud of every lost fight.</p>
+    <p><strong>6th rule: </strong>You honestly pst your opponents.</p>
+    <p><strong>7th rule: </strong>Fights will go on as long as they have to.</p>
+  </div>
+</div>
+
+
+{% if session.user_id %}
+
+
+
+<!-- logged out user -->
+{% else %}
+
+<div class="card text-center mt-4">
+  <div class="card-body">
+    <h5 class="card-title">Join Fight Club!</h5>
+    <p class="card-text">Get a new grip on your life.</p>
+    <a href="/register" class="btn btn-primary">Register</a>
+  </div>
+</div>
+
+{% endif %}
+
+<script type=text/javascript>
+  document.addEventListener('DOMContentLoaded', function () {
+      alert(`
+Welcome to Fight Club!
+
+Fight Club was my first web-application created from scratch in fall 2021 done for the purpose of Harvard CS50 course.
+
+Specification:
+1. Based on the Flask framework
+2. Python for backend
+3. HTML+CSS+JS frontend styled with Bootstrap
+4. Running on Gunicorn server
+5. Chart JS for customized charts
+6. SQLite database
+
+Lessons learned:
+1. Understanding of HTTP routes
+2. Introduction to the template system
+3. Decorators in Flask
+4. SQL queries
+5. Implementing external functionality like Chart JS
+6. Deploying into production with Gunicorn and Digital Ocean
+
+Source code: https://github.com/e63g/fight-club
+      `)
+  })
+</script>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+.subtotal {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  margin: 15px;
+  padding: 15px;
+  border: 1px solid lightgray;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.subtotal__checkbox {
+  font-size: 12px;
+  display: flex;
+}
+
+.subtotal__checkbox > input {
+  margin-right: 5px;
+}
+
+.subtotal__button {
+  background-color: #f0c14b;
+  border: 1px solid;
+  border-color: #a88734 #9c7e31 #846a29;
+  width: 100%;
+  height: 30%;
+}

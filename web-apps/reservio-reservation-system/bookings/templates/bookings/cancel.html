@@ -1,0 +1,40 @@
+{% extends "bookings/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<!-- user types in reference and email -->
+<div id='step-1'>
+    <h4 class='text-center'>Cancel Booking</h4>
+    <div class='col-md-4 mx-auto mt-3'>
+        <p class='lead text-center'>Let us find your booking:</p>
+        <form id='form'>
+            <div class="input-group mb-3">
+                <input required type="text" id='email' class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default" placeholder='Your Email'>
+            </div>
+            <div class="input-group mb-3">
+                <input maxlength="4" minlength="4" required pattern="[a-zA-Z0-9]+" required type="text" id='ref'
+                    class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+                    placeholder='Booking Reference (example "BR4N")'>
+            </div>
+            <div class='row mx-auto col-6'>
+                <button type="submit" id='find-button' class="btn btn-primary mx-auto">Find Booking</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="step-2" class='hide'>
+    Confirm
+</div>
+
+<!-- fetching on the server and returnining confirmation screen with the details of the reservation -->
+
+<!-- user confirms and we delete the entry from Day and Reservation model -->
+
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'bookings/csrf.js' %}"></script>
+<script src="{% static 'bookings/cancel.js' %}"></script>
+{% endblock %}

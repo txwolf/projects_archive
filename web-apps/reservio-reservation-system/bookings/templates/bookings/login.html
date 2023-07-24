@@ -1,0 +1,26 @@
+{% extends "bookings/layout.html" %}
+
+{% block body %}
+<div class='col-md-4 mx-auto mt-3'>
+
+    <h2 class='text-center'>Login</h2>
+
+    {% if message %}
+    <div>{{ message }}</div>
+    {% endif %}
+
+    <form action="{% url 'login_view' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group mb-3">
+            <input autofocus class="form-control" type="text" name="username" placeholder="Username">
+        </div>
+        <div class="form-group mb-3">
+            <input class="form-control" type="password" name="password" placeholder="Password">
+        </div>
+        <input class="btn btn-primary mb-3" type="submit" value="Login">
+    </form>
+
+    Don't have an account? Contact our support.
+</div>
+
+{% endblock %}

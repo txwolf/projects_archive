@@ -1,0 +1,29 @@
+CREATE TABLE users (
+id INTEGER PRIMARY KEY NOT NULL,
+username TEXT NOT NULL UNIQUE,
+hash TEXT NOT NULL)
+
+CREATE TABLE fights
+(id INTEGER PRIMARY KEY NOT NULL,
+user_id INTEGER NOT NULL,
+timestamp TEXT NOT NULL,
+strength NUMERIC NOT NULL,
+opponent TEXT NOT NULL,
+comments TEXT NOT NULL,
+FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE opponents
+(id INTEGER PRIMARY KEY NOT NULL,
+user_id INTEGER NOT NULL,
+opponent TEXT NOT NULL,
+description TEXT NOT NULL,
+FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+
+
+
+
+
+

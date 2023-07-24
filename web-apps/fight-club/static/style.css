@@ -1,0 +1,35 @@
+main .form-control
+{
+    /* Center form controls */
+    display: inline-block;
+
+    /* Override Bootstrap's 100% width for form controls */
+    width: 15rem;
+
+}
+
+main
+{
+    /* Scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* Center contents */
+}
+
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+#opponent-input {
+    width: 3rem;
+}
+
+.w-35 {
+    width: 35%;
+}
+
+.quote {
+    
+}

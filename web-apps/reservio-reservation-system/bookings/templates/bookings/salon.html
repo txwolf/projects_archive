@@ -1,0 +1,48 @@
+{% extends "bookings/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+
+<!-- main screen tweaked calendar -->
+<!-- salon have the same calendar as customer by making reservation but with cancel button -->
+<a href="{% url 'logout_view' %}" class=" btn btn-outline-secondary float-end">Logout</a>
+
+<h4>Calendar:</h4>
+
+<div class='d-flex flex-row mt-3'>
+
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-primary">
+            Date
+        </a>
+        <a href="javascript:;" data-date="2022-01-10" data-slot="one" class="list-group-item disabled">9:00-10:00</a><a
+            href="javascript:;" data-date="2022-01-10" data-slot="two"
+            class="list-group-item disabled">10:00-11:00</a><a href="javascript:;" data-date="2022-01-10"
+            data-slot="three" class="list-group-item disabled">11:00-12:00</a><a href="javascript:;"
+            data-date="2022-01-10" data-slot="four" class="list-group-item disabled">12:00-13:00</a><a
+            href="javascript:;" data-date="2022-01-10" data-slot="five"
+            class="list-group-item disabled">13:00-14:00</a><a href="javascript:;" data-date="2022-01-10"
+            data-slot="six" class="list-group-item disabled">14:00-15:00</a><a href="javascript:;"
+            data-date="2022-01-10" data-slot="seven" class="list-group-item disabled">15:00-16:00</a><a
+            href="javascript:;" data-date="2022-01-10" data-slot="eight"
+            class="list-group-item disabled">16:00-17:00</a>
+    </div>
+    <div class='d-flex flex-row overflow-auto' id='step1'>
+    </div>
+</div>
+
+<!-- two options new appointment or cancel -->
+<!-- modified from the customer way -->
+
+
+{% endblock %}
+
+{% block script %}
+<script type=text/javascript>
+    const book = "{% url 'book' %}" 
+    const cancel = "{% url 'cancel' %}" 
+</script>
+<script src="{% static 'bookings/csrf.js' %}"></script>
+<script src="{% static 'bookings/salon.js' %}"></script>
+{% endblock %}

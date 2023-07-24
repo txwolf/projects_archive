@@ -1,0 +1,44 @@
+.result {
+  cursor: default;
+  position: relative;
+  &__data {
+    margin-top: -10px;
+    margin-bottom: 2rem;
+    &__humidity {
+    margin-top: 0.5rem;
+    font-weight: 600;
+    font-size: 55px;
+    }
+    &__comment {
+      font-size: 20px;
+    }
+  }
+  &__weather {
+    font-size: 13px;
+    &__label {
+      margin-bottom: 5px;
+    }
+    &__summary {
+    }
+  }
+  &__return {
+    position: absolute;
+    height: 300px;
+    top: -80px;
+    left: -30px;
+    width: 30px;
+    transition: all .4s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.4);
+      transition: all .5s;
+      }
+    svg {
+      margin-top: 130px;
+      left: 0;
+      
+    }
+  }
+  
+}

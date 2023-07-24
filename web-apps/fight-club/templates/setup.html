@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Your Setup
+{% endblock %}
+
+{% block main %}
+    <div class="text-center">
+
+    <div class="card">
+    {% if opponents %}
+    <h6 class="card-header">Your current opponents:</h6>
+
+    <div class="card-body">
+    <table class="table table-hover m-auto">
+    <tbody>
+
+    {% for opponent in opponents %}
+
+    <tr>
+      <td>{{ opponent["opponent"] }}</td>
+      <td>{{ opponent["description"] }}</td>
+      <td>
+          <form action="/delopponent" method="POST">
+          <input type="hidden" value="{{ opponent["opponent"] }}" name="delopponent">
+          <button type="submit" class="btn btn-secondary btn-sm">Delete</button>
+          </form>
+      </td>
+    </tr>
+
+    {% endfor %}
+
+    </tbody>
+    </table>
+
+    {% else %}
+
+    <h6 class="mb-4 mt-4">You dont have opponents yet.</h6>
+
+    {% endif %}
+
+
+      <h6 class="card-header">Add Opponent</h6>
+      <div class="card-body">
+          <p>What are you fighting against? Candies? Websurfing? Smoking?</p>
+        <form method="POST" action="/setup">
+        <div class="form-group">
+            <label for="opponent">Opponent Symbol, e.g. C for Candies</label>
+            <input type="text" id="opponent-input" class="form-control" name="opponent" placeholder="" pattern="[A-Z0-9]" autocomplete="off" maxlength="1">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="desc" autofocus placeholder="Describe this opponent" autocomplete="off">
+        </div>
+            <button class="btn btn-primary" type="submit">Add Opponent</button>
+        </form>
+        </div>
+    </div>
+
+
+
+    <!--
+    Your current breakpoint definition:
+    <form method="POST" action="/setup">
+        <div class="form-group">
+            <input type="text" class="form-control" name="breakpoint" autofocus placeholder="New Breakpoint" autocomplete="off">
+        </div>
+    </form>-->
+
+    </div>
+
+{% endblock %}

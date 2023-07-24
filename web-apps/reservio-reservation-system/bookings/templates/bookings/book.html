@@ -1,0 +1,67 @@
+{% extends "bookings/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<!-- header with steps -->
+
+<div>
+    <nav class="nav nav-pills nav-fill">
+        <a id='step1nav' class="nav-item nav-link active" href="#">1. Choose services</a>
+        <a id='step2nav' class="nav-item nav-link disabled" href="#">2. Choose date & time</a>
+        <a id='step3nav' class="nav-item nav-link disabled" href="#">3. Confirm</a>
+    </nav>
+</div>
+
+<!-- cart -->
+<div class="d-flex justify-content-end my-3">
+    <button id="showcart" type="button" class="btn btn-primary me-1">
+        Cart <span class="badge badge-light">0</span>
+    </button>
+    <button id='proceed' type="button" class="btn btn-success">
+        Proceed
+    </button>
+
+</div>
+
+<!-- block to steps display/hide -->
+
+
+
+<!-- step 1 choose services -->
+<div id='step1'>
+    <div id='cart-table' class='cart-table mb-5'>
+        <!-- tables with services -->
+    </div>
+
+    <div id='services-table'>
+        <!-- tables with services -->
+    </div>
+</div>
+
+
+
+<!-- step 2 choose dates -->
+<div id='step2'>
+
+    <div class='d-flex flex-row overflow-auto' id='days-anchor'>
+    </div>
+
+</div>
+
+
+<!-- step 3 confirm -->
+<div id='step3'>
+    Step 3
+</div>
+
+<div id='success'>
+
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'bookings/csrf.js' %}"></script>
+<script src="{% static 'bookings/book.js' %}"></script>
+{% endblock %}

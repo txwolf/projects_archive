@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit Account
+{% endblock %}
+
+{% block main %}
+<div class="text-center">
+    
+<p>Type new password below:</p>
+<form action="/editaccount" method="POST">
+    <div class="form-group">
+        <input type="password" class="form-control" name="password" placeholder="Password" minlength="4">
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control" name="confirmation" placeholder="Confirm password" minlength="4">
+    </div>
+    <button class="btn btn-primary" type="submit">Change password</button>
+</form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Fight
+{% endblock %}
+
+{% block main %}
+
+<div class="text-center">
+
+<div class="card">
+<h6 class="card-header">Add Fight</h6>
+
+<div class="card-body">
+<form method="POST" action="/addfight">
+    <div class="form-group">
+        <!--<label for="opponent">Opponent:</label>-->
+        <select name="opponent" class="form-control d-block m-auto w-35" required>
+            <option value="" selected disabled hidden>Choose Opponent</option>
+            {% for opponent in opponents %}
+            <option value="{{ opponent["opponent"] }}">{{ opponent["opponent"] }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="form-group">
+        <!--<label for="strength">Attack Strength (0.0 - 8.0):</label>-->
+        <input required type="number" class="form-control d-block m-auto w-35" name="strength" step="0.1" placeholder="Attack Strength (0.0-10.0)" min="0.1" max="8.0" oninvalid="alert('Enter correct attack strength')">
+    </div>
+
+
+
+     <div class="form-group">
+        <!--<label for="comments">Comments:</label>-->
+        <textarea class="form-control d-block m-auto w-35" name="comments"  placeholder="Comments" autocomplete="off"></textarea>
+    </div>
+
+    <div class="form-group">
+    <label for="timestamp">Fight timestamp:</label>
+    <input required type="datetime-local" class="form-control d-block m-auto w-35" name="timestamp">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Add Fight</button>
+
+</form>
+</div>
+
+</div>
+
+
+{% endblock %}

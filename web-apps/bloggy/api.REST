@@ -1,0 +1,18 @@
+### Register
+POST http://localhost:8800/api/auth/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "test",
+    "email": "test",
+    "password": "test"
+}
+ 
+### Get posts
+GET http://localhost:8800/api/posts HTTP/1.1
+
+
+### Get single post
+GET http://localhost:8800/api/posts/1 HTTP/1.1
+
+ 

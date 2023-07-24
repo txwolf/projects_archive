@@ -1,0 +1,150 @@
+### GET
+GET http://localhost:8800/api/users HTTP/1.1
+
+
+### POST
+POST http://localhost:8800 HTTP/1.1
+
+
+
+
+
+### Register
+POST http://localhost:8800/api/auth/register HTTP/1.1
+content-type: application/json
+
+{
+  "username": "lalala",
+  "password": "test3",
+  "email": "test3@test3.com"
+}
+
+### Login
+POST http://localhost:8800/api/auth/login HTTP/1.1
+content-type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "test"
+}
+
+### Update user
+PUT http://localhost:8800/api/users/63fd7b1ac5fbb7751d445a48 HTTP/1.1
+content-type: application/json
+
+{
+  "username": "test3",
+  "password": "test3",
+  "email": "test3@test.com",
+  "userId": "63fd7b1ac5fbb7751d445a48",
+  "desc": "test description"
+}
+
+### Delete user
+DELETE http://localhost:8800/api/users/63fd7b1ac5fbb7751d445a48 HTTP/1.1
+content-type: application/json
+
+{
+  "userId": "63fd7b1ac5fbb7751d445a48"
+}
+
+
+### Get user
+GET http://localhost:8800/api/users/63fd85622a050380e4eac0fe HTTP/1.1
+content-type: application/json
+
+### Get user friends
+GET http://localhost:8800/api/users/friends/6401d72f1083d9f4f7cedad6 HTTP/1.1
+content-type: application/json
+
+
+### FOLLOW user
+PUT http://localhost:8800/api/users/6401c8450b56c4e4a99cd579/follow HTTP/1.1
+content-type: application/json
+
+{
+  "userId": "6401d72f1083d9f4f7cedad6"
+}
+
+### UNFOLLOW user
+PUT http://localhost:8800/api/users/63fd85622a050380e4eac0fe/unfollow HTTP/1.1
+content-type: application/json
+
+{
+  "userId": "63fd871d91d38983563592bd"
+}
+
+### POST post
+POST http://localhost:8800/api/posts HTTP/1.1
+content-type: application/json
+
+{
+  "userId": "63fd871d91d38983563592bd",
+  "desc": "yoooooo2222o"
+}
+
+### UDPATE post
+PUT http://localhost:8800/api/posts/63fd8cf668a47d89fe59dbec HTTP/1.1
+content-type: application/json
+
+{
+  "userId": "63fd85622a050380e4eac0fe", 
+  "desc": "hey its my seconds post"
+}
+
+### DELETE post
+DELETE http://localhost:8800/api/posts/63fd8cf668a47d89fe59dbec HTTP/1.1
+content-type: application/json
+
+{
+  "userId": "63fd85622a050380e4eac0fe"
+}
+
+### LIKE post
+PUT http://localhost:8800/api/posts/63fd8cc068a47d89fe59dbeb/like HTTP/1.1
+content-type: application/json
+
+{
+  "userId": "63fd85622a050380e4eac0fe"
+}
+
+### Timeline posts
+GET http://localhost:8800/api/posts/timeline/all HTTP/1.1
+content-type: application/json
+
+{
+  "userId": "63fd871d91d38983563592bd"
+}
+
+
+### New conversation
+POST http://localhost:8800/api/conversations HTTP/1.1
+content-type: application/json
+
+{
+  "senderId": "6401c8450b56c4e4a99cd579", 
+  "receiverId": "6401c8450b56c4e4a99cd579"
+}
+
+### Find conversations
+GET http://localhost:8800/api/conversations/6401c8450b56c4e4a99cd579 HTTP/1.1
+content-type: application/json
+
+
+### New message
+POST http://localhost:8800/api/messages HTTP/1.1
+content-type: application/json
+
+{
+  "conversationId": "6401d8b5fac733f6ededc445", 
+  "sender": "6401c8450b56c4e4a99cd579",
+  "text": "HEHEHEH now me"
+}
+
+### Find conversations
+GET http://localhost:8800/api/messages/6401d8b5fac733f6ededc445 HTTP/1.1
+content-type: application/json
+
+
+
+

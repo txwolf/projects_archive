@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "humidify",
+    "slug": "humidify",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    // "icon": "./assets/logo_black.png",
+    // "splash": {
+    //   "image": "./assets/logo_black.png",
+    //   "resizeMode": "contain",
+    //   "backgroundColor": "#ffffff"
+    // },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    }
+    // "android": {
+    //   "adaptiveIcon": {
+    //     "foregroundImage": "./assets/logo_black.png",
+    //     "backgroundColor": "#FFFFFF"
+    //   }
+    // },
+    // "web": {
+    //   "favicon": "./assets/logo_black.png",
+    //   "build": {
+    //     "babel": {
+    //       "include": ["react-router-native"]
+    //     }
+    //   }
+    // }
+  }
+}

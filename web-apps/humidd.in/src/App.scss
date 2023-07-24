@@ -1,0 +1,77 @@
+@import "_mixin.scss";
+
+.app {
+  backdrop-filter: blur(4px);
+  margin: 5% auto auto;
+  max-width: 300px;
+  width: 300px;
+  height: 330px;
+  text-align: center;
+  background-color: rgba(256, 256, 256, 0.6);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #2b408c;
+  position: relative;
+  box-shadow: rgba(256, 256, 256, 0.25) 0px 54px 55px, rgba(256, 256, 256, 0.12) 0px -12px 30px, rgba(256, 256, 256, 0.12) 0px 4px 6px, rgba(256, 256, 256, 0.17) 0px 12px 13px, rgba(256, 256, 256, 0.09) 0px -3px 5px;
+}
+
+.app header {
+  margin: 2rem;
+  text-shadow: rgba(0, 0, 0, 0.1) 0 3px 8px;
+  cursor: default;
+  font-size: 16px;
+  h1 {
+    font-size: 28px;
+  }
+  position: relative;
+  top: 0;
+  transition: all .5s;
+}
+
+.app .headerResult {
+  top:-15px;
+  left: 0px;
+  transform: scale(0.85);
+  transition: all .3s;
+  opacity: 0.9;
+  p {
+    display: none;
+  }
+}
+
+.tempSwitch {
+  position: absolute;
+  top: 7px;
+  right: 14px;
+  &__choosed {
+    font-weight: 700;
+    text-shadow: 0px 0px 4px rgba(255,255,255,1);
+    cursor: pointer;
+  }
+  &__other {
+    font-weight: 200;
+    cursor: pointer;
+  }
+}
+
+// bg
+.main {
+  border: 1px transparent solid;
+  height: 100%;
+  background: linear-gradient(90deg, #ffe51e, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 500% 500%;
+  transition: all 2s;
+  background-position: 50% 50%;
+}
+
+.dry {
+  transition: all 3500ms;
+  background-position: 0% 50%;
+}
+
+.moist {
+  transition: all 3500ms;
+  background-position: 100% 50%;
+}

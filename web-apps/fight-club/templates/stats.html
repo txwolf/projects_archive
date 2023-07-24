@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stats
+{% endblock %}
+
+{% block main %}
+
+    <div class="card">
+        <div class="card-body">
+            <canvas id="chart"></canvas>
+
+            <script>
+                var ctx = document.getElementById("chart").getContext("2d");
+
+               const data = {
+                  datasets: [{
+                    label: 'Fights',
+                    data: [
+                    {% for row in rows: %}
+
+                    {x: moment.utc("{{ row["timestamp"] }}"), y: {{ row["strength"] }} },
+
+                    {% endfor %}
+
+
+  //{x: moment.utc("2017-07-08T06:15:02"),y: 23.375},
+  //{x: moment.utc("2017-07-09T06:15:02"),y: 23.312},
+ // {x: moment.utc("2017-07-10T06:15:02"),y: 23.312},
+ // {x: moment.utc("2017-07-11T06:15:02"),y: 23.25}
+                    ],
+                    backgroundColor: 'rgb(173, 68, 52)',
+                    borderColor: 'rgba(0, 0, 0, 0.1)',
+                    tension: 0.1,
+                  }],
+                };
+
+                var scatterChart = new Chart(ctx,{
+                    type: 'line',
+                    data: data,
+                    options: {
+
+                        //https://stackoverflow.com/questions/53669361/how-to-display-date-as-label-on-x-axis-in-chart-js
+                        scales: {
+                            y: {
+                                ticks: {
+                                    beginAtZero:true
+                                }
+                            },
+                            x: {
+                                type: 'time',
+                                time: {
+                                    parser: 'YYYY-MM-DD HH:mm:ss',
+                                    unit: 'minute',
+                                    displayFormats: {
+                                        'minute': 'DD/MM HH:mm',
+                                        'hour': 'DD/MM HH:mm'
+                                    }
+                                },
+                                ticks: {
+                                    source: 'data',
+                                    minRotation: 30,
+                                }
+                            }
+                        }
+
+                    }
+                });
+
+            </script>
+
+        </div>
+    </div>
+
+{% endblock %}
